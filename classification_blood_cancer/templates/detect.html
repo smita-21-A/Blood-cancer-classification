@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Sample Detection</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Arial", sans-serif;
+            background: linear-gradient(to bottom right, #ff4d4d, #660000);
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            backdrop-filter: blur(20px);
+        }
+
+        .bl_ai {
+            margin-top: -10px !important;
+        }
+
+        .navbar a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            text-align: center;
+            padding: 60px 25px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .upload-box {
+            margin-top: 35px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 15px auto;
+            font-size: 16px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            font-size: 18px;
+            background: white;
+            color: #b30000;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        footer {
+            margin-top: 118px;
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            font-size: 14px;
+        }
+
+        /* Preview image styling */
+        #previewImage {
+            width: 300px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px black;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h2 class="bl_ai"><b>BloodShield AI</b></h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/detect">Detection</a>
+        <a href="/treatment">Treatment</a>
+        <a href="/contact">Contact</a>
+        <a href="/feedback">Feedback</a>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Blood Cancer Detection</h1>
+    <p>
+        Upload your blood smear image below. Our advanced AI model will analyze  
+        cell morphology and identify if the sample matches cancerous patterns.
+    </p>
+
+    <div class="upload-box">
+
+        <!-- ✅ IMAGE PREVIEW ADDED HERE -->
+        <img id="previewImage">
+
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" id="imageInput" required accept="image/*">
+            <button class="btn" type="submit">Analyze Sample</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</div>
+
+<footer>
+    © 2025 BloodShield AI – Blood Cancer Detection & Assistance System  
+</footer>
+
+<!-- ✅ JAVASCRIPT FOR IMAGE PREVIEW -->
+<script>
+    const imageInput = document.getElementById("imageInput");
+    const previewImage = document.getElementById("previewImage");
+
+    imageInput.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+            previewImage.src = URL.createObjectURL(file);
+            previewImage.style.display = "block";
+        }
+    });
+</script>
+
+</body>
+</html>

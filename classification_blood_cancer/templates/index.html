@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Cancer Detection System</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Arial", sans-serif;
+            background: linear-gradient(to bottom right, #ff4d4d, #660000);
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            backdrop-filter: blur(20px);
+        }
+
+        .navbar h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .navbar a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 99px 29px;
+        }
+
+        .hero img {
+            width: 350px;
+            filter: drop-shadow(0 0 15px black);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin-top: 35px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 14px 28px;
+            margin: 10px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .btn1 {
+            background: white;
+            color: #b30000;
+        }
+
+        .btn2 {
+            background: #990000;
+            color: white;
+            border: 2px solid white;
+        }
+
+        footer {
+            margin-top: 107px;
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR FIXED -->
+    <div class="navbar">
+        <h2><b>BloodShield AI</b></h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/detect">Detection</a>
+            <a href="/treatment">Treatment</a>
+            <a href="/contact">Contact</a>
+            <a href="/feedback">Feedback</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        
+        <h1>AI-Powered Blood Cancer Detection</h1>
+        <p>
+            Early detection saves lives. Our system uses advanced Deep Learning models to analyze blood smear images 
+            and identify potential signs of leukemia with high accuracy. Protect your health with the power of AI.
+        </p>
+
+        <div class="buttons">
+            <a href="/detect" class="btn1">Start Detection</a>
+            <a href="/treatment" class="btn2">Treatment Assistance</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 BloodShield AI – Blood Cancer Detection & Assistance System  
+    </footer>
+
+</body>
+</html>
+
